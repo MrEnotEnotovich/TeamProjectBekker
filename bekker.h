@@ -39,7 +39,11 @@ class Cake : public Product
 {
 public:
     Cake(){}
-    ~Cake(){}
+    Cake(string ,int ,float ,float );
+    ~Cake(){}//broken da boken
+
+    void addCake();
+    void CakeList();
 };
 
 
@@ -48,7 +52,11 @@ class Pastry : public Product
 {
 public:
     Pastry(){}
+    Pastry(string ,int ,float ,float );
    ~Pastry(){}
+
+    void addPastry();
+    void PastryList();
 };
 
 
@@ -57,7 +65,11 @@ class Bread : public Product
 {
 public:
     Bread(){}
+    Bread(string ,int ,float ,float );
     ~Bread(){}
+
+    void addBread();
+    void BreadList();
 };
 
 #endif // BEKKER_H
