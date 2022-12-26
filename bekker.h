@@ -33,4 +33,31 @@ public:
     float CostPrice; //себестоимость
     float Price; //рыночная стоимость(на полке на магазина)
 };
+
+//производный класс Cake от базового Product
+class Cake : public Product
+{
+public:
+    Cake(){}
+    ~Cake(){}
+};
+
+
+//производный класс Pastry от базового Product
+class Pastry : public Product
+{
+public:
+    Pastry(){}
+   ~Pastry(){}
+};
+
+
+//производный класс Bread от базового Product
+class Bread : public Product
+{
+public:
+    Bread(){}
+    ~Bread(){}
+};
+
 #endif // BEKKER_H
