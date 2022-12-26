@@ -10,4 +10,5 @@ qtcAddDeployment()
 
 HEADERS += \
     bekker.h \
+    products.h
 
