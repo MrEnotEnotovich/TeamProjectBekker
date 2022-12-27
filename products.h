@@ -84,6 +84,8 @@ public:
     ProfitRecord(int ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float );
     ~ProfitRecord(){}
 
+    void InputProfit();
+
 };
 
 extern vector <ProfitRecord> vProf;
