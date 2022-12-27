@@ -6,7 +6,8 @@ CONFIG -= qt
 SOURCES += main.cpp \
     eexpenserecord.cpp \
     prodconstruct.cpp \
-    addproduct.cpp
+    addproduct.cpp \
+    maininterface.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
