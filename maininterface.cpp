@@ -115,7 +115,22 @@ void MainInterface::interactMain()
 
                     case 'l': //вывод списка продуктов
                         {
+                            system("cls");
+                            Cake *Temp = new Cake;
+                            Bread *Temp2 = new Bread;
+                            Pastry *Temp3 = new Pastry;
 
+                            cout << setiosflags(ios::left);//выравнивание по левой части
+                            cout<< setw(3) << "No" << setw(15) << "Name" << setw(15) << "Weight" << setw(5) << "Price" <<endl;
+
+                            Temp->CakeList();
+                            Temp2->BreadList();
+                            Temp3->PastryList();
+
+                            delete Temp;
+                            delete Temp2;
+                            delete Temp3;
+                            system("pause");
                         }
                     break;
 

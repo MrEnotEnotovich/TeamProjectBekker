@@ -108,6 +108,39 @@ void ProdInit() //создания базового списка продукт�
     delete CName;
 }
 
+void Cake::CakeList()
+{
+    cout << setiosflags(ios::left);//выравнивание по левой части
+    cout<< setw(15) <<"-----------------Cakes-----------------"<<endl;
+    // setw() устанавливает ширину следующего ввода-вывода равной переданному интегральному аргументу
+    for (unsigned int j = 0; j<vCake.size(); j++)
+    {
+        cout<< setw(3) << j << setw(15) << vCake[j].Name << setw(15) << vCake[j].Weight << setw(5) << vCake[j].Price <<endl;
+    }
+}
+
+void Bread::BreadList()
+{
+    cout << setiosflags(ios::left);//выравнивание по левой части
+    cout<< setw(15) <<"\n-----------------Bread-----------------"<<endl;
+
+    for (unsigned int j = 0; j<vBread.size(); j++)
+    {
+        cout<< setw(3) << j << setw(15) << vBread[j].Name << setw(15) << vBread[j].Weight << setw(5) << vBread[j].Price <<endl;
+    }
+}
+
+void Pastry::PastryList()
+{
+    cout << setiosflags(ios::left);//выравнивание по левой части
+    cout<< setw(15) <<"\n-----------------Pastry-----------------"<<endl;
+
+    for (unsigned int j = 0; j<vPastry.size(); j++)
+    {
+        cout << setw(3) << j << setw(15) << vPastry[j].Name << setw(15) << vPastry[j].Weight << setw(5) << vPastry[j].Price <<endl;
+    }
+}
+
 void Order::AddOrder() //метод добавления заказа класса "заказ"
 {
     int Year,Month,no,match,kol; //параметры заказа год/месяц/номер/флаг match/количество
