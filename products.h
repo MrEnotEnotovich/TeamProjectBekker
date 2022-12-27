@@ -3,8 +3,11 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
+
+void ProdInit();  //начальный список продуктов
 
 //Базовый класс Product
 class Product
