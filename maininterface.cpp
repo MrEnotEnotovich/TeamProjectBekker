@@ -59,14 +59,19 @@ void MainInterface::interactMain()
                             delete Temp;
 
                             //Вывод годового отчёта
-
+                            ExpenseRecord *Temp2 = new ExpenseRecord;
+                            Temp2->display();
+                            system("pause");
+                            delete Temp2;
                         }
                     break;
 
                     case 'o': //описание Расходов за год
                         {
                             //Ввод расходов за год по месяцам
-
+                            ExpenseRecord *Temp = new ExpenseRecord;
+                            Temp->InputExpense();
+                            delete Temp;
                         }
                     break;
 

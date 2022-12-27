@@ -56,3 +56,57 @@ void ExpenseRecord::InputExpense()//ввод затрат за год  по ме
     delete NovIn;
     delete DecIn;
 }
+
+void ExpenseRecord::display()
+{
+    int control = 0;
+    int menuu;
+
+
+
+    cout<<"Enter year: ";
+    cin>>menuu; //ввод года проверки
+    for (unsigned int j = 0; j<v.size(); j++)
+    {
+        if (v[j].Year == menuu) //ищет вектор с нужным годом
+    {
+            control++;
+            string months ="     Jan     Feb     Mar     Apr     May     Jun     Jul     Aug     Sep     Oct     Nov     Dec";
+                cout<<"\n"<<months<<"\n";
+                cout<<"--------------------------------------------------------------------------------------------------------"<<endl;
+
+                //Затраты
+                cout<<"\t"<<v[j].Jan<<"\t"<<v[j].Feb<<"\t"<<v[j].Mar<<"\t"
+                  <<v[j].Apr<<"\t"<<v[j].May<<"\t"<<v[j].Jun<<"\t"
+                  <<v[j].Jul<<"\t"<<v[j].Aug<<"\t"<<v[j].Sep<<"\t"
+                  <<v[j].Oct<<"\t"<<v[j].Nov<<"\t"<<v[j].Dec<<endl;
+
+        for(unsigned i = 0;i<vProf.size();i++)
+        {
+            if(vProf[i].Year == v[j].Year)
+            {
+                //Доходы
+                cout<<"\t"<<vProf[i].Jan<<"\t"<<vProf[i].Feb<<"\t"<<vProf[i].Mar<<"\t"
+                          <<vProf[i].Apr<<"\t"<<vProf[i].May<<"\t"<<vProf[i].Jun<<"\t"
+                          <<vProf[i].Jul<<"\t"<<vProf[i].Aug<<"\t"<<vProf[i].Sep<<"\t"
+                          <<vProf[i].Oct<<"\t"<<vProf[i].Nov<<"\t"<<vProf[i].Dec<<endl;
+
+                //Доходы - Затраты
+                cout<<"\t"<<vProf[i].Jan-v[j].Jan<<"\t"<<vProf[i].Feb-v[j].Feb<<"\t"<<vProf[i].Mar-v[j].Mar<<"\t"
+                          <<vProf[i].Apr-v[j].Apr<<"\t"<<vProf[i].May-v[j].May<<"\t"<<vProf[i].Jun-v[j].Jun<<"\t"
+                          <<vProf[i].Jul-v[j].Jul<<"\t"<<vProf[i].Aug-v[j].Aug<<"\t"<<vProf[i].Sep-v[j].Sep<<"\t"
+                          <<vProf[i].Oct-v[j].Oct<<"\t"<<vProf[i].Nov-v[j].Nov<<"\t"<<vProf[i].Dec-v[j].Dec<<endl;
+                cout<<"--------------------------------------------------------------------------------------------------------"<<endl;
+
+                //Профит
+                cout<<"Profit: "<<vProf[i].Jan-v[j].Jan+vProf[i].Apr-v[j].Apr+vProf[i].Jul-v[j].Jul+vProf[i].Oct-v[j].Oct+vProf[i].Feb-v[j].Feb+vProf[i].May-v[j].May+vProf[i].Aug-v[j].Aug+vProf[i].Nov-v[j].Nov+vProf[i].Mar-v[j].Mar+vProf[i].Jun-v[j].Jun+vProf[i].Sep-v[j].Sep+vProf[i].Dec-v[j].Dec<<endl;
+            }
+        }
+
+
+    }else{if (j == v.size()-1 && control == 0){
+        cout<<"Not found"<<endl;}
+    }
+    cout << endl;
+    }
+}
