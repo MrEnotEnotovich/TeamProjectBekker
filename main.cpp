@@ -1,10 +1,9 @@
-#include <iostream>
-
-using namespace std;
+#include "bekker.h"
+#include "products.h"
 
 int main()
 {
-    cout << "Hello World!" << endl;
-    return 0;
+   MainInterface *MainMenu = new MainInterface;
+   MainMenu->interactMain();
+   delete MainMenu;
 }
-

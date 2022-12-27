@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <ctime>
 
 using namespace std;
 
@@ -67,6 +68,7 @@ public:
     float Sum;
     float Profit;
 
+    Order(int Year,int Month,float Sum ,float Profit);
     Order(){}
     ~Order(){}
 
