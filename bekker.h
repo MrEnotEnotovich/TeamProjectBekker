@@ -14,6 +14,16 @@ protected:
     int Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec;
 };
 
+class ExpenseRecord :  public AnnualReport//месяц должен быть
+{
+
+
+public:
+
+    ExpenseRecord(){}
+    ~ExpenseRecord(){}
+};
+
 class MainInterface
 {
 
