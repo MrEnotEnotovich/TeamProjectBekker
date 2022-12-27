@@ -42,6 +42,99 @@ void ProdInit() //создания базового списка продукт�
     delete CName;
 }
 
+void Order::AddOrder() //метод добавления заказа класса "заказ"
+{
+    int Year,Month,no,match,kol; //параметры заказа год/месяц/номер/флаг match/количество
+    float Sum = 0; //обнуляем сумму
+    float Profit = 0; // обнуляем прибыль
+    char memnu;
+
+    do{
+        system("cls");
+        cout<<" Cake        'c'\n"
+            <<" Bread       'b'\n"
+            <<" Pastry      'p'\n"
+            <<" Done        'd'\n";
+        cin>>memnu;
+        switch(memnu)
+        {
+            case 'c': //добавление в зазаз Cake
+                {
+                    system("cls");
+                    Cake *Tempc = new Cake;
+                    Tempc->CakeList();
+                    delete Tempc;
+                    cin>>no;
+                    cout<<"\nQuantity: ";
+                    cin>>kol;
+                    Sum += vCake[no].Price * kol; //считаем сумму позиции Cake сумма=цена товара*количество
+                    Profit += (vCake[no].Price-vCake[no].CostPrice) * kol;//Прибыль=(ЦенаНаПолке-Себестоимость)*количество
+                }
+            break;
+
+            case 'b': //добавление в заказ Bread
+                {
+                    system("cls");
+                    Bread *Tempb = new Bread;
+                    Tempb->BreadList();
+                    delete Tempb;
+                    cin>>no;
+                    cout<<"\nQuantity: ";
+                    cin>>kol;
+                    Sum += vBread[no].Price * kol; //считаем сумму позиции Bread сумма=цена товара*количество
+                    Profit += (vBread[no].Price-vBread[no].CostPrice) * kol; //Прибыль=(ЦенаНаПолке-Себестоимость)*количество
+                }
+            break;
+
+            case 'p': //добавление в заказ Pastry
+                {
+                    system("cls");
+                    Pastry *Tempp = new Pastry;
+                    Tempp->PastryList();
+                    delete Tempp;
+                    cin>>no;
+                    cout<<"\nQuantity: ";
+                    cin>>kol;
+                    Sum += vPastry[no].Price * kol;//считаем сумму позиции Pastry сумма=цена товара*количество
+                    Profit += (vPastry[no].Price-vPastry[no].CostPrice) * kol;//Прибыль=(ЦенаНаПолке-Себестоимость)*количество
+                }
+            break;
+
+            case 'd':
+            {
+                time_t now = time(0);  //начинает счёт времени с 0 для правильного отражения года
+                tm *ltm = localtime(&now);//время вроде в секундах
+                Year = 1900 + ltm->tm_year; //tm_year выдаёт год с 1900 те 122 поэтому и +1900
+                Month = ltm->tm_mon+1;
+            }
+            break;
+        }//конец switch(memnu)
+    }while(memnu != 'd');
+
+    match = 0;
+    for (unsigned int j = 0; j<vOrd.size(); j++) //проходим по вектору заказов
+    {
+        if (vOrd[j].Year == Year) //ищем год в векторе заказов с тем что в системе ПК
+            {
+                if (vOrd[j].Month == Month) //ищем месяц в векторе заказов с тем что в системе ПК
+                    {
+                        vOrd[j].Sum += Sum;
+                        vOrd[j].Profit += Profit;
+                        match = 1;
+                    }
+            }
+    }
+    if (match == 0)
+        {
+            vOrd.push_back(Order(Year,Month,Sum,Profit));//записываем в вектор заказов заказ,вызывая конструктор с параметрами заказа
+        }
+
+    system("cls"); // стираем консоль
+    cout<<"That will be "<<Sum<<endl; // сумма=цена товара*количество
+    cout<<Profit<<endl; // сумма прибыли=(ЦенаНаПолке-Себестоимость)*количество
+    system("pause");
+}
+
 void ProfitRecord::InputProfit()
 {
     int match;
