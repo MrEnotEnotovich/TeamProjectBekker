@@ -7,6 +7,72 @@ vector <Bread> vBread;
 vector <Order> vOrd;
 vector <ProfitRecord> vProf;
 
+void Cake::addCake() //добавление новых позиций
+{
+    string *CName = new string;
+    int *CWeight = new int;
+    float *CCostPrice = new float;
+    float *CPrice = new float;
+
+    cout<<"Enter Cake name:\n";
+    cin>>*CName;
+    cout<<"\nEnter Cake weight:\n";
+    cin>>*CWeight;
+    cout<<"\nEnter Cake cost price:\n";
+    cin>>*CCostPrice;
+    cout<<"\nEnter Cake price:\n";
+    cin>>*CPrice;
+    vCake.push_back(Cake(*CName,*CWeight,*CCostPrice,*CPrice));
+    delete CName;
+    delete CWeight;
+    delete CCostPrice;
+    delete CPrice;
+}
+
+void Bread::addBread()
+{
+    string *CName = new string;
+    int *CWeight = new int;
+    float *CCostPrice = new float;
+    float *CPrice = new float;
+
+    cout<<"Enter Bread name:\n";
+    cin>>*CName;
+    cout<<"\nEnter Bread weight:\n";
+    cin>>*CWeight;
+    cout<<"\nEnter Bread cost price:\n";
+    cin>>*CCostPrice;
+    cout<<"\nEnter Bread price:\n";
+    cin>>*CPrice;
+    vBread.push_back(Bread(*CName,*CWeight,*CCostPrice,*CPrice));
+    delete CName;
+    delete CWeight;
+    delete CCostPrice;
+    delete CPrice;
+}
+
+void Pastry::addPastry()
+{
+    string *CName = new string;
+    int *CWeight = new int;
+    float *CCostPrice = new float;
+    float *CPrice = new float;
+
+    cout<<"Enter Pastry name:\n";
+    cin>>*CName;
+    cout<<"\nEnter Pastry weight:\n";
+    cin>>*CWeight;
+    cout<<"\nEnter Pastry cost price:\n";
+    cin>>*CCostPrice;
+    cout<<"\nEnter Pastry price:\n";
+    cin>>*CPrice;
+    vPastry.push_back(Pastry(*CName,*CWeight,*CCostPrice,*CPrice));
+    delete CName;
+    delete CWeight;
+    delete CCostPrice;
+    delete CPrice;
+}
+
 void ProdInit() //создания базового списка продуктов
 {
     string *CName = new string;
