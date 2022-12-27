@@ -346,5 +346,12 @@ void ProfitRecord::InputProfit()
                 }//конец switch(vOrd.Month)
             }
         }
-
+    void ListClear()
+    {
+        vCake.clear();
+        vPastry.clear();
+        vBread.clear();
+        vOrd.clear();
+        vProf.clear();
+    }
 }

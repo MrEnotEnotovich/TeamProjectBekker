@@ -10,6 +10,8 @@
 using namespace std;
 
 void ProdInit();  //начальный список продуктов
+void ListClear(); //Очищение всех листов продуктов Cakelist,Breadlist,PastryList
+void ClearExpense(); //Очищение вектора расходов v
 
 //Базовый класс Product
 class Product

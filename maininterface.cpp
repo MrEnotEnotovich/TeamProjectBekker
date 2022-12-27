@@ -160,6 +160,7 @@ void MainInterface::interactMain()
         system("cls");
     }while(menu != '3');
 
-
+    ListClear();
+    ClearExpense();
     cout<<"\nAdieu!\n";
 }
