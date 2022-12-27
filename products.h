@@ -54,5 +54,20 @@ public:
     void BreadList();
 };
 
+//производный класс Order от базового Product(чтобы иметь доступ к полям класса Product)
+//Добавляет возможность заказа из списка продуктов
+class Order : public Product
+{
+
+public:
+    int Year,Month;
+    float Sum;
+    float Profit;
+
+    Order(){}
+    ~Order(){}
+
+};
+
 #endif // PRODUCTS
 
