@@ -230,7 +230,7 @@ void Order::AddOrder() //метод добавления заказа класс
 
     system("cls"); // стираем консоль
     cout<<"That will be "<<Sum<<endl; // сумма=цена товара*количество
-    cout<<Profit<<endl; // сумма прибыли=(ЦенаНаПолке-Себестоимость)*количество
+    //cout<<Profit<<endl;  сумма прибыли=(ЦенаНаПолке-Себестоимость)*количество
     system("pause");
 }
 
@@ -346,12 +346,13 @@ void ProfitRecord::InputProfit()
                 }//конец switch(vOrd.Month)
             }
         }
-    void ListClear()
-    {
-        vCake.clear();
-        vPastry.clear();
-        vBread.clear();
-        vOrd.clear();
-        vProf.clear();
-    }
+}
+
+void ListClear()
+{
+    vCake.clear();
+    vPastry.clear();
+    vBread.clear();
+    vOrd.clear();
+    vProf.clear();
 }

@@ -109,8 +109,9 @@ void ExpenseRecord::display()
     }
     cout << endl;
     }
-    void ClearExpense()
-    {
-        v.clear();
-    }
+}
+
+void ClearExpense()
+{
+    v.clear();
 }
