@@ -9,9 +9,6 @@ SOURCES += main.cpp \
     addproduct.cpp \
     maininterface.cpp
 
-include(deployment.pri)
-qtcAddDeployment()
-
 HEADERS += \
     bekker.h \
     products.h

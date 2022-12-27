@@ -28,6 +28,8 @@ public:
 
 class MainInterface
 {
+private: //Поле
+    char ch,ch2,chp,menu;
 
 public: //Методы
     MainInterface(){}

@@ -1,6 +1,7 @@
 #ifndef PRODUCTS
 #define PRODUCTS
 
+#include <iomanip> //для setw()
 #include <iostream>
 #include <string>
 #include <vector>
@@ -72,6 +73,7 @@ public:
     Order(){}
     ~Order(){}
 
+    void AddOrder();
 };
 
 //Класс ProfitRecord для расчетов доходов с заказов Order за каждый месяц
