@@ -1,3 +1,6 @@
+#include "bekker.h"
+#include "products.h"
+
 void MainInterface::interactMain()
 {
     ProdInit();
