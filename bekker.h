@@ -16,12 +16,14 @@ protected:
 
 class ExpenseRecord :  public AnnualReport//месяц должен быть
 {
-
-
 public:
 
     ExpenseRecord(){}
+    ExpenseRecord(int ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float );
     ~ExpenseRecord(){}
+
+    void InputExpense();
+    void display();
 };
 
 class MainInterface
