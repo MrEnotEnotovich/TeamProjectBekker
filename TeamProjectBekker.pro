@@ -4,7 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    eexpenserecord.cpp
+    eexpenserecord.cpp \
+    prodconstruct.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
