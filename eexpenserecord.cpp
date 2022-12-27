@@ -66,37 +66,34 @@ void ExpenseRecord::display()
 
     cout<<"Enter year: ";
     cin>>menuu; //ввод года проверки
+    cout << setiosflags(ios::left);
     for (unsigned int j = 0; j<v.size(); j++)
     {
         if (v[j].Year == menuu) //ищет вектор с нужным годом
     {
             control++;
-            string months ="     Jan     Feb     Mar     Apr     May     Jun     Jul     Aug     Sep     Oct     Nov     Dec";
-                cout<<"\n"<<months<<"\n";
-                cout<<"--------------------------------------------------------------------------------------------------------"<<endl;
+              cout<<"\n          Jan     Feb     Mar     Apr     May     Jun     Jul     Aug     Sep     Oct     Nov     Dec\n";
+                cout<<"-----------------------------------------------------------------------------------------------------"<<endl;
 
                 //Затраты
-                cout<<"\t"<<v[j].Jan<<"\t"<<v[j].Feb<<"\t"<<v[j].Mar<<"\t"
-                  <<v[j].Apr<<"\t"<<v[j].May<<"\t"<<v[j].Jun<<"\t"
-                  <<v[j].Jul<<"\t"<<v[j].Aug<<"\t"<<v[j].Sep<<"\t"
-                  <<v[j].Oct<<"\t"<<v[j].Nov<<"\t"<<v[j].Dec<<endl;
+                cout<< setw(10) <<"Expenses"<< setw(8) << v[j].Jan<< setw(8) << v[j].Feb<< setw(8) << v[j].Mar<< setw(8) << v[j].Apr
+                    << setw(8) << v[j].May<< setw(8) << v[j].Jun<< setw(8) << v[j].Jul<< setw(8) << v[j].Aug<< setw(8) << v[j].Sep
+                    << setw(8) << v[j].Oct<< setw(8) << v[j].Nov<< setw(8) << v[j].Dec<<endl;
 
         for(unsigned i = 0;i<vProf.size();i++)
         {
             if(vProf[i].Year == v[j].Year)
             {
                 //Доходы
-                cout<<"\t"<<vProf[i].Jan<<"\t"<<vProf[i].Feb<<"\t"<<vProf[i].Mar<<"\t"
-                          <<vProf[i].Apr<<"\t"<<vProf[i].May<<"\t"<<vProf[i].Jun<<"\t"
-                          <<vProf[i].Jul<<"\t"<<vProf[i].Aug<<"\t"<<vProf[i].Sep<<"\t"
-                          <<vProf[i].Oct<<"\t"<<vProf[i].Nov<<"\t"<<vProf[i].Dec<<endl;
+                cout<< setw(10) << "Income" << setw(8) << vProf[i].Jan<< setw(8) << vProf[i].Feb<< setw(8) << vProf[i].Mar<< setw(8) << vProf[i].Apr
+                    << setw(8) << vProf[i].May<< setw(8) << vProf[i].Jun<< setw(8) << vProf[i].Jul<< setw(8) << vProf[i].Aug<< setw(8) << vProf[i].Sep
+                    << setw(8) << vProf[i].Oct<< setw(8) << vProf[i].Nov<< setw(8) << vProf[i].Dec<<endl;
 
                 //Доходы - Затраты
-                cout<<"\t"<<vProf[i].Jan-v[j].Jan<<"\t"<<vProf[i].Feb-v[j].Feb<<"\t"<<vProf[i].Mar-v[j].Mar<<"\t"
-                          <<vProf[i].Apr-v[j].Apr<<"\t"<<vProf[i].May-v[j].May<<"\t"<<vProf[i].Jun-v[j].Jun<<"\t"
-                          <<vProf[i].Jul-v[j].Jul<<"\t"<<vProf[i].Aug-v[j].Aug<<"\t"<<vProf[i].Sep-v[j].Sep<<"\t"
-                          <<vProf[i].Oct-v[j].Oct<<"\t"<<vProf[i].Nov-v[j].Nov<<"\t"<<vProf[i].Dec-v[j].Dec<<endl;
-                cout<<"--------------------------------------------------------------------------------------------------------"<<endl;
+                cout<< setw(10) << "Profit"<< setw(8) << vProf[i].Jan-v[j].Jan<< setw(8) << vProf[i].Feb-v[j].Feb<< setw(8) << vProf[i].Mar-v[j].Mar
+                    << setw(8) << vProf[i].Apr-v[j].Apr<< setw(8) << vProf[i].May-v[j].May<< setw(8) << vProf[i].Jun-v[j].Jun<< setw(8) << vProf[i].Jul-v[j].Jul
+                    << setw(8) << vProf[i].Aug-v[j].Aug<< setw(8) << vProf[i].Sep-v[j].Sep<< setw(8) << vProf[i].Oct-v[j].Oct<< setw(8) << vProf[i].Nov-v[j].Nov<< setw(8) << vProf[i].Dec-v[j].Dec<<endl;
+                cout<<"-----------------------------------------------------------------------------------------------------"<<endl;
 
                 //Профит
                 cout<<"Profit: "<<vProf[i].Jan-v[j].Jan+vProf[i].Apr-v[j].Apr+vProf[i].Jul-v[j].Jul+vProf[i].Oct-v[j].Oct+vProf[i].Feb-v[j].Feb+vProf[i].May-v[j].May+vProf[i].Aug-v[j].Aug+vProf[i].Nov-v[j].Nov+vProf[i].Mar-v[j].Mar+vProf[i].Jun-v[j].Jun+vProf[i].Sep-v[j].Sep+vProf[i].Dec-v[j].Dec<<endl;
