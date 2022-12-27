@@ -72,5 +72,21 @@ public:
 
 };
 
+//Класс ProfitRecord для расчетов доходов с заказов Order за каждый месяц
+class ProfitRecord
+{
+public:
+
+    int Year;
+    int Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec;
+
+    ProfitRecord(){}
+    ProfitRecord(int ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float ,float );
+    ~ProfitRecord(){}
+
+};
+
+extern vector <ProfitRecord> vProf;
+
 #endif // PRODUCTS
 
